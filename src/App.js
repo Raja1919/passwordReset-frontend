@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/resetpassword" element={<ResetPassword />} />
+        <Route path="/signup" element={<Register />} />
+        <Route path="/forgetpassword" element={<ResetPassword />} />
         <Route path="/save-new-password/:resetToken" element={<SavePassword />}/>
         <Route />
       </Routes>

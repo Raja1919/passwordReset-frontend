@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {  useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate=useNavigate();
+
+  const handleSignup=()=>{
+    navigate("/signup")
+  }
+
+  const handleForget=()=>{
+    navigate("/forgetpassword" )
+
+  }
 
 
   const [Email,setEmail]=useState('');
@@ -69,15 +80,14 @@ const Login = () => {
         </div>
         <div className="forget">
           <div class="reset-password">
-            <p>
-              {" "}
-              Forget<a href="/resetPassword">Password?</a>
+          <p>
+              Forget?<button onClick={handleForget} className="btn btn-primary">Password</button>
             </p>
           </div>
 
           <div class="signup">
             <p>
-              Not a member?<a href="/register">Register</a>
+              Not a member?<button onClick={handleSignup} className="btn btn-primary">Register</button>
             </p>
           </div>
         </div>
