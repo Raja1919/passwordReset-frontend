@@ -32,9 +32,11 @@ const ResetPassword = () => {
 
       navigate(`/save-new-password/${token}`);
     } catch (error) {
-      console.error(error);
-      setError("An error occurred. Please try again later.");
-      setSuccess("");
+      if (error.response && error.response.status === 404) {
+        window.alert("user not found");
+      } else {
+        console.log(error);
+      }
     }
   };
 
