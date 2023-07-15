@@ -40,7 +40,11 @@ const Login = () => {
       window.alert("login successfully")
       console.log(response.data)
     } catch (error) {
-      console.log(error)
+      if (error.response && error.response.status === 404) {
+        window.alert("Incorrect email or password");
+      } else {
+        console.log(error);
+      }
     }
   }
 
